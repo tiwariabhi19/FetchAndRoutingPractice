@@ -1,13 +1,12 @@
 // Write your JS code here
 import {Component} from 'react'
-import Loader from 'react-router-dom'
+import Loader from 'react-loader-spinner'
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'
 
 import BlogItem from '../BlogItem'
-
 import './index.css'
 
-class BlogItem extends Component {
+class BlogList extends Component {
   state = {isLoading: true, blogsData: []}
 
   componentDidMount() {
@@ -34,8 +33,8 @@ class BlogItem extends Component {
     return (
       <div className="blogs-list-container">
         {isLoading ? (
-          //eslint-disable-next-line react/no-unknown-property
-          <div testid="loader">
+          // eslint-disable-next-line react/no-unknown-property
+          <div data-testid="loader">
             <Loader type="TailSpin" color="#00bfff" height={50} width="50" />
           </div>
         ) : (
@@ -49,4 +48,4 @@ class BlogItem extends Component {
     )
   }
 }
-export default BlogItem
+export default BlogList
